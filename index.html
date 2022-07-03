@@ -2,39 +2,50 @@
 <html>
 
 <head>
-    <title>G. L.</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <title>JS-timing meta-study</title>
     <meta charset="UTF-8">
     <meta name="author" content="Gaspar Lukacs">
     <meta name="keywords" content="JavaScript, meta-analysis, online research, reaction time, experiment, University of Konstanz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Call for participation in web-based timing meta-study.">
+    <meta name="description" content="Call for contributions to web-based JavaScript timing meta-study.">
     <link rel="shortcut icon" href="https://iscience.uni-konstanz.de/wp-content/themes/iscience/images/favicon.gif" />
-    <link href="./style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
     <div class="centered">
-        <div class="head">Call for Participation in Web-Based Timing Meta-Study</div>
+        <div style="display:flex;justify-content:space-between;">
+            <div style="float:left">
+                <img src="./logo_iscience.png" alt="" style="height:60px;">
+            </div>
+            <div style="float:right">
+                <img src="./logo_UniKonstanz.png" alt="" style="height:60px; background:white;">
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="head">CALL FOR CONTRIBUTIONS TO WEB-BASED TIMING META-STUDY</div>
         <hr>
         <div class="texts">
             <div class="ttl">
                 Introduction<br />
             </div>
-            Our recent <a target="_blank" href="https://doi.org/10.3758/s13428-022-01835-2">study</a> has demonstrated how to capture, in JavaScript, computer screens' display change time with near-millisecond precision by taking into account the
-            given monitors' refresh cycles (using <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">RAF loops</a>). For the present follow-up study, we seek regular online response-time
-            experiments whose primary goal is to assess common psychological
-            phenomena (such as, e.g., a Stroop effect), so that we can assess extent of
-            improvement in case of such real experimental results (e.g., a larger overall Stroop effect due to lower within-test variances). In each experiment we will implement and assess two different timing mechanisms: (a) the inferior
+            Our recent <a target="_blank" href="https://doi.org/10.3758/s13428-022-01835-2">study</a> demonstrated how to capture, in JavaScript, computer screens' display change time with near-millisecond precision by taking into account the
+            given monitors' refresh cycles (using <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">RAF loops</a>). For the present follow-up study, we seek upcoming regular online response-time
+            experiments whose primary goal is to measure common psychological
+            phenomena (such as, e.g., a Stroop effect), so that we can assess the extent of timing
+            improvement in case of such real experimental results (e.g., a larger overall Stroop effect due to lower within-test variances). In each contributing experiment, we will implement two different timing mechanisms: (a) the inferior
             conventional
-            one that ignores the refresh cycle, and (b) the superior new one (with <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">RAF</a>) that takes
+            one (with no RAF) that ignores the refresh cycle, and (b) the superior new one (with RAF) that takes
             refresh cycles into account and hence provides superior (more precise) results. For each display
-            change in each experiment, the underlying code will store both timings, and thereby the experiment leaders will be able to use the superior timing data for the primary purpose of the study (e.g., estimating the Stroop effect or its
+            change in each experiment, the underlying code will store both timings, and thereby the experiment leaders will be able to use the superior timing data for their primary purpose for the study (e.g., estimating the Stroop effect or its
             modulations under given conditions), and may simply disregard the other timing data. For
-            our project however, the aim is solely the meta-analytical comparison of the two timing mechanisms. (In our eventual manuscript, the original purpose of each included study would only be briefly listed.)
+            our project however, the aim is solely the meta-analytical comparison of the two timing mechanisms, and does not concern the studies' original purposes. Thereby each contributing study
+            will serve two purposes at the same time, with very little extra effort (see below).
 
             <div class="ttl">
-                Design requirements for participation<br />
+                Design requirements<br />
             </div>
 
             Any response-time experiment (requiring fast keypress responses, typically below one second) is suitable for us where there is a clear expectation for a substantial effect between the response times to any two stimulus types (e.g.,
@@ -42,14 +53,16 @@
             the main effect of interest. For example, the experimenters may be interested in modulating
             the Stroop effect (which may or may not prove successful), but for us it is sufficient to have the Stroop effect itself, which then can be used for the comparison of the two timing mechanisms. (Note that we want to assess improvements in
             true effects, and therefore we cannot include studies that in the end find no significant effect between any of the response types.)
+            <br />
+            The experiment should be of substantial scale – for example, studies with less than 50 expected participants are not generally suitable.
 
             <div class="ttl">
-                Technical requirements for participation<br />
+                Technical requirements<br />
             </div>
 
             <ul>
                 <li>
-                    <b>Using your own custom JavaScript-based app for data collection.</b><br />
+                    <div class="subttl">Using your own custom JavaScript-based app</div>
                     If you have your own web app for data collection, it should be easy to add to it the implementation of the new <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">RAF</a> timing
                     measurements: both source code and intructions for it can be found <a target="_blank" href="https://github.com/gasparl/dtjs">here</a> (but still we can help with it). For the "inferior" timing, the time should simply be called
                     outside (before or after) the RAF call, hence simply ignoring the refresh cycle. Both
@@ -58,8 +71,8 @@
                     timing measurement for the original purposes of your study, while on our end we will use the data from your experiment solely to compare the two timing mechanisms.
                 </li>
                 <li>
-                    <b>Using Labvanced</b><br />
-                    If you are using Labvanced's online experiment creation framework, you have little else to do but to give permission for us to use the data collected via Labvanced. The Labvanced team, our collaboration partners in this project
+                    <div class="subttl">Using Labvanced</div>
+                    If you are using <a target="_blank" href="https://www.labvanced.com/">Labvanced</a>'s online experiment creation framework, you have little else to do but to give permission for us to use the data collected via Labvanced. The Labvanced team, our collaboration partners in this project
                     (see LINK-TO-ADD), will implement the two different timing measurements for you (from which you can always use the superior one).
                 </li>
             </ul>
@@ -70,9 +83,9 @@
                 The data and information we need<br />
             </div>
             At the end of the data collection for your experiment, we would ask for the following.
-            <ul>
+            <ol type="1">
                 <li>
-                    All relevant data collected during the experiment. (If you prefer, you can exclude all data or information not related to display timing – see below for what is relevant.) Note: If you use Labvanced, it's enough to give permission
+                    All relevant data collected during the experiment. (If you prefer, you can exclude all data or information not related to display timing – see below for what is relevant.) Note: If you use Labvanced, it's enough to give permission to us
                     to use the data that's saved on Labvanced's server anyway.
                 </li>
                 <li>
@@ -84,15 +97,19 @@
                 <li>
                     The name of the column that distinguishes the two stimulus types to be compared. For example: "stim_type" column name, with "compatible" and "incompatible" types.
                 </li>
-                We would also much welcome but do not strictly need, from each test: browser brand and version, OS brand and version, and the date (of starting and/or finishing the task).
-            </ul>
+                <li>
+                    Column names and other information necessary for filtering data, if applicable (e.g., to exclude practice data or incorrect responses).
+                </li>
+            </ol>
+
+            We would also welcome but do not strictly need, from each test: browser brand and version, OS brand and version, location (the country in which the participant took the test), and the date of starting and/or finishing the task.
 
             <div class="ttl">
-                Our offer<br />
+                Your reward<br />
             </div>
             <ul>
                 <li>
-                    If you contribute with a custom JavaScript app (which requires some effort on your part),
+                    If you contribute with a custom JavaScript app,
                     you are offered co-authorship in our eventual paper.
                 </li>
                 <li>
@@ -105,14 +122,15 @@
                 Organisers<br />
             </div>
 
-            The project is organized by the iScience team at the University of Konstanz (team leader: Prof. Dr. Ulf-Dietrich Reips), in collaboration with the Department of Methodology and Statistics at Tilburg University (Dr. Bennett Kleinberg), as
-            well as in the above-mentioned collaboration with Labvanced.
+            The project is organized by the iScience team at the University of Konstanz (head of group: <a target="_blank" href="https://iscience.uni-konstanz.de/team/reips/">Prof. Dr. Ulf-Dietrich Reips</a>), in collaboration with the Department of
+            Methodology and Statistics at Tilburg University (<a target="_blank" href="https://bkleinberg.net/">Dr. Bennett Kleinberg</a>), as
+            well as in the above-mentioned collaboration with <a target="_blank" href="https://www.labvanced.com/">Labvanced</a>.
 
 
             <div class="ttl">
                 Contact<br />
             </div>
-            If you are interested in contributing or have any questions, please contact Gáspár Lukács at lkcsgaspar@gmail.com.
+            If you are interested in contributing or have any questions, please contact <a target="_blank" href="https://gasparl.github.io/">Gáspár Lukács</a> at <a href="mailto: lkcsgaspar@gmail.com">lkcsgaspar@gmail.com</a>.
 
         </div>
 
